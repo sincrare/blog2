@@ -2,10 +2,28 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Blog3
+    %title しんくれあ記
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = yield
+    %header
+      .navbar.navbar-default
+        .container-fluid
+          .navbar-header
+            =link_to "しんくれあ記", articles_path, class: 'navbar-brand'
+        .collapse.navbar-collapse
+          .nav.navbar-nav
+
+    .main.container-fluid
+      - if notice
+        %p.notice= notice
+      - if alert
+        %p.alert= alert
+      = yield
+
+    %footer
+      %p
+        %small
+          Copyright (C) 2018 sincrare All Rights Reserved.
