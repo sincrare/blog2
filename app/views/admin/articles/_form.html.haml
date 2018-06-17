@@ -1,0 +1,10 @@
+= simple_form_for [:admin, @article] do |f|
+  = f.input :entry_at
+  = f.input :title
+  = f.input :content
+  = f.input :published
+  = f.button :submit
+
+  = f.simple_fields_for :article_images do |img|
+    = image_tag img.image
+    = img.file_field :image

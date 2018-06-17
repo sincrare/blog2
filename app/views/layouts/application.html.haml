@@ -10,11 +10,12 @@
   %body
     %header
       .navbar.navbar-default
-        .container-fluid
-          .navbar-header
-            =link_to "しんくれあ記", articles_path, class: 'navbar-brand'
+        .navbar-header
+          = link_to "しんくれあ記", articles_path, class: 'navbar-brand'
         .collapse.navbar-collapse
-          .nav.navbar-nav
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              = link_to "管理者画面", admin_articles_path
 
     .main.container-fluid
       - if notice

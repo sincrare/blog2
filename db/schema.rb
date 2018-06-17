@@ -16,9 +16,11 @@ ActiveRecord::Schema.define(version: 2018_06_16_175449) do
   enable_extension "plpgsql"
 
   create_table "article_images", force: :cascade do |t|
+    t.bigint "article_id"
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_article_images_on_article_id"
   end
 
   create_table "articles", force: :cascade do |t|
