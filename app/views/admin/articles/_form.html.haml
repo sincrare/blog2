@@ -6,5 +6,8 @@
   = f.button :submit
 
   = f.simple_fields_for :article_images do |img|
-    = image_tag img.image
+    .thumbnail
+      - if img.object.image?
+        .tag-sample= "挿入タグ：<img src='" + img.object.image.url + "' >"
+        .uploaded-image= image_tag img.object.image.url
     = img.file_field :image
