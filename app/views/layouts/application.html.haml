@@ -19,8 +19,9 @@
                 %p.navbar-text
                   Login as
                   %strong= current_user.email
-              %li
-                = link_to "管理者画面", admin_articles_path
+              - if current_user.admin?
+                %li
+                  = link_to "管理者画面", admin_articles_path
               %li
                 = link_to 'ログアウト', destroy_user_session_path, method: :delete
             - else
