@@ -1,4 +1,4 @@
-%h1 Listing articles
+%h1 記事の一覧
 
 %table
   %thead
@@ -18,10 +18,10 @@
         %td= article.title
         %td= article.content.truncate(20, omission: '...')
         %td= article.published ? '公開' : '非公開'
-        %td= link_to 'Show', admin_article_path(article)
-        %td= link_to 'Edit', edit_admin_article_path(article)
-        %td= link_to 'Destroy', admin_article_path(article), method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to '詳細', admin_article_path(article)
+        %td= link_to '編集', edit_admin_article_path(article)
+        %td= link_to '削除', admin_article_path(article), method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
-= link_to 'New Article', new_admin_article_path
+= link_to '新規投稿', new_admin_article_path
