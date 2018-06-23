@@ -14,7 +14,7 @@
   %tbody
     - @articles.each do |article|
       %tr
-        %td= I18n.l article.entry_at
+        %td= l article.entry_at
         %td= article.title
         %td= article.content.truncate(20, omission: '...')
         %td= article.published ? '公開' : '非公開'
