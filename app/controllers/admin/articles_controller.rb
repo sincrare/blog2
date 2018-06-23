@@ -2,7 +2,7 @@ class Admin::ArticlesController < Admin::ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
-    @articles = Article.all
+    @articles = Article.order_by_descending
   end
 
   def show
