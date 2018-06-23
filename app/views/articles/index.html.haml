@@ -4,7 +4,7 @@
       .article
         .article-entry-at
           = fa_icon('calendar-o')
-          %time= I18n.l(article.entry_at)
+          %time= l article.entry_at
         %h2= article.title
         .content= simple_format article.content.truncate(100, omission: '...')
         .detail= link_to '続きを読む', article_path(article)
