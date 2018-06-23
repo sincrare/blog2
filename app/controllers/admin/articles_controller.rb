@@ -21,7 +21,7 @@ class Admin::ArticlesController < Admin::ApplicationController
     @article = Article.new(article_params)
 
     if @article.save
-      redirect_to @article, notice: 'Article was successfully created.'
+      redirect_to @article, notice: '記事が投稿されました'
     else
       render :new
     end
@@ -29,7 +29,7 @@ class Admin::ArticlesController < Admin::ApplicationController
 
   def update
     if @article.update(article_params)
-      redirect_to @article, notice: 'Article was successfully updated.'
+      redirect_to @article, notice: '記事を更新しました'
     else
       render :edit
     end
@@ -37,7 +37,7 @@ class Admin::ArticlesController < Admin::ApplicationController
 
   def destroy
     @article.destroy
-    redirect_to admin_articles_url, notice: 'Article was successfully destroyed.'
+    redirect_to admin_articles_url, notice: '記事を削除しました'
   end
 
   private
